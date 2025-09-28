@@ -2,6 +2,7 @@ package com.rohit.week4ProductionTutorials.Spring_Boot_Week_4.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.envers.Audited;
 
 @Entity
 @Getter
@@ -9,7 +10,8 @@ import lombok.*;
 @Table(name = "posts")
 @AllArgsConstructor
 @NoArgsConstructor
-public class PostEntity {
+@Audited
+public class PostEntity extends AuditableEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
